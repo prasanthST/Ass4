@@ -4,9 +4,9 @@ function reqListener (params) {
     console.log(countryArr[0]);
  
     for(let country of countryArr){
-
+        
      console.log(country.flags.png)
-     
+
     }  
   
  }
