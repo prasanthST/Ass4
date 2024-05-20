@@ -4,11 +4,9 @@ function reqListener (params) {
     console.log(countryArr[0]);
  
     for(let country of countryArr){
-     console.table(country.name.common)
+
      console.log(country.flags.png)
-     console.log(country.region)
-     console.log(country.population)
-     console.log(country.subregion)
+     
     }  
   
  }
