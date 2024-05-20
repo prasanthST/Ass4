@@ -1,12 +1,14 @@
 # Day 3 Assignment 2
-## This project includes the implementation of the first and second que answers in `Flag.html` and `script.js`.
+## To document the discussion about JSON propertiess are same without their orders and how to find specific information such as flags, country names, populations, regions, and subregions
 
 ## Files
 
 - `Flag.html`: Contains the HTML structure for displaying both 1st and 2nd  answers.
-- `script.js`: Contains the JavaScript logic for managing and displaying the que answers.
+- `script.js`: This section explains the JavaScript code written in `script.js` to find and display information about a country flags.
+- `script2.js`: This section explains the JavaScript code written in `script2.js` to find and display information about a country, including its name, region, population, and subregion.
 
-## Code Description
+
+## HTML code 
 
 ### Flag.html
 ```
@@ -48,7 +50,7 @@ The script.js file contains the JavaScript logic for handling the queue answers.
 
 
 
-// question2 
+// question no 2 
 // print Flag names ?
 function reqListener (params) {
     const countryArr = JSON.parse(this.responseText);
@@ -58,6 +60,26 @@ function reqListener (params) {
 
      console.log(country.flags.png)
 
+    }  
+  
+ }
+   const req = new XMLHttpRequest();
+   req.addEventListener("load", reqListener);
+   req.open("GET","https://restcountries.com/v3.1/all");
+   req.send();
+```
+ ## Document my code for finding a country's name, region, population, and subregion using script2.js
+
+ ```
+function reqListener (params) {
+    const countryArr = JSON.parse(this.responseText);
+
+ 
+    for(let country of countryArr){
+        console.table(country.name.common)
+        console.table(country.region)
+        console.log(country.subregion)
+        console.log(country.population)
     }  
   
  }
